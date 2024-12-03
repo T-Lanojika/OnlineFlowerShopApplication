@@ -1,5 +1,6 @@
-export default function Cart() {
-    
+export default function Cart({c}) {
+    const total = c.reduce((sum,item) => sum + item.qty*item.price, 0)
+
     return (
         <div className="table-container">
             <h4 className="card-title">Cart</h4>
@@ -12,11 +13,23 @@ export default function Cart() {
 
                 </thead>
                 {
-                    
+                        <tbody>
+                            {
+                                c.map(
+                                    (item) => (
+                                        <tr key={item.id}>
+                                            <td>{item.name}</td>
+                                            <td>{item.qty}</td>
+                                            <td>{item.qty * item.price}</td>
+                                        </tr>
+                                    )
+                                )
+                            }
+                        </tbody>
                 }
                 <tr>
                     <td >Grand Total : </td>
-                    <td colSpan={2}>Grand Total</td>
+                    <td colSpan={2}>{total}</td>
                 </tr>
             </table>
            

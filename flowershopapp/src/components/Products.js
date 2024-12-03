@@ -1,6 +1,8 @@
 import '../assets/CSS/layout.css';
 import {flowers} from './FlowerDB';
 import { useState } from 'react';
+import Product from './Product';
+import Cart from './Cart';
 
 
 export default function Products(){
@@ -30,8 +32,9 @@ export default function Products(){
                 <div className="grid-container">
                     {
                         //product
-
-                        
+                        flowers.map((flower) => (
+                           <Product key={flower.id} flower={flower} addToCart={addToCart} /> 
+                        ))                        
                     }
                 </div>
 
@@ -39,6 +42,7 @@ export default function Products(){
             <div className="item3">
                 {
                 //cart
+                <Cart c={carts} />
                 }
             </div>
         </>

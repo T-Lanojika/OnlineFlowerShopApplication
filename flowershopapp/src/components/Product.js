@@ -18,11 +18,11 @@ export default function Product({flower,addToCart}){
         <div className="grid-item">
 
             <div class="card">
-                <img src={flower.img} />
+                <img src={flower.img} alt={flower.name} />
                 <div class="card-body">
                     <h5 class="card-title">Price:{flower.price}</h5>
                     <div class="quantity-container">
-                        <label for="quantity">Quantity:{quantity}</label>
+                        <label for="quantity">Quantity:</label>
                         <input onChange={(e)=>setQuantity(parseInt(e.target.value) || 0)} type="number" id="quantity" name="quantity" />
                     </div>
                     <button onClick={handleAddToCart} class="card-button">Add to Cart</button>
