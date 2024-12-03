@@ -3,7 +3,6 @@ import '../assets/CSS/layout.css';
 
 
 export default function Products(){
-   
     return(
         <>
             <div className="item1">
@@ -14,6 +13,7 @@ export default function Products(){
                 <div className="grid-container">
                     {
                         //product
+                        
                     }
                 </div>
 
